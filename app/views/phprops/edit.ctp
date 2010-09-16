@@ -1,0 +1,1 @@
+stub para mostrar el editor de un campo (se carga en el interior de un lightbox)
