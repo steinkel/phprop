@@ -1,0 +1,140 @@
+/* global styles */
+
+BODY {
+	margin: 0px;
+	padding: 0px;
+	background: #EEF;
+	font: 14px arial,helvetica,sans-serif;
+	color: #333;
+}
+
+#phprop-box {
+	margin: 20px;
+	padding: 10px;
+	background: #FFF;
+	border: 1px dotted #CCD;
+}
+
+/* table */
+
+#phprop-table TABLE {
+	width: 100%;
+	border-collapse: collapse;
+}
+#phprop-table TH, #phprop-table TD {
+	padding: 5px;
+	border: 1px solid #CCD;
+}
+#phprop-table TH {
+	background: #EEF;
+	cursor: pointer;
+}
+#phprop-table TD INPUT {
+	margin: 0px;
+}
+
+/* editor */
+
+#phprop-editor-controls BUTTON {
+	float: right;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+/* tabs */
+
+.nano-tabs {
+	margin: 25px 0px 10px 0px;
+	padding: 0px;
+}
+.nano-tabs-tab {
+	display: inline;
+	padding: 10px;
+	background: #EEF;
+	border: 1px solid #CCD;
+	border-bottom: 0px none;
+	cursor: pointer;
+}
+.nano-tabs-tab A {
+	text-decoration: none;
+	font-weight: bold;
+	color: #333;
+}
+.nano-tabs-tab A:hover {
+	text-decoration: underline;
+	color: #669;
+}
+.nano-tabs-tab IMG {
+	margin-left: 5px;
+	border: 0px none;
+}
+.nano-tabs-selected {
+	background: #FFF;
+}
+.nano-tabs-selected A {
+	text-decoration: underline;
+	color: #669;
+}
+.nano-tabs-content {
+	padding: 5px;
+	border: 1px solid #CCD;
+}
+.nano-tabs-content TEXTAREA {
+	width: 99%;
+	height: 220px;
+	padding: 5px;
+	border: 1px solid #CCD;
+}
+
+/* dialog */
+
+.nano-dialog {
+	width: 400px;
+	padding: 5px;
+	background: #EEF;
+	border: 1px dotted #CCD;
+	color: #333;
+	z-index: 9;
+}
+.nano-dialog-title {
+	padding: 5px;
+	background: #EFF;
+	border: 1px dotted #CCD;
+}
+.nano-dialog-title SPAN {
+	font-weight: bold;
+	color: #666;
+	cursor: default;
+}
+.nano-dialog-close {
+	float: right;
+	text-decoration: none;
+	font-weight: bold;
+	color: #D66;
+}
+.nano-dialog-close:hover {
+	color: #E99;
+}
+.nano-dialog-content {
+	margin: 10px 5px 15px 5px;
+}
+.nano-dialog-button {
+	float: right;
+	margin-left: 5px;
+	cursor: pointer;
+}
+.nano-dialog-layer {
+	background: #333;
+	z-index: 8;
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+
+/* tooltip */
+
+.nano-tooltip {
+	padding: 3px 5px 3px 5px;
+	background: #EEF;
+	border: 1px dotted #CCD;
+	color: #333;
+}
