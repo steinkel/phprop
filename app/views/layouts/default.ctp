@@ -6,7 +6,7 @@
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php echo $html->css('phprop');?>
-	<?php echo $javascript->link(array('ckeditor/ckeditor', 'nano-v1.0', 'nano.browser', 'nano.ajax', 'nano.tooltip', 'nano.dialog', 'nano.datatable', 'phprop')); ?>
+	<?php echo $javascript->link(array('ckeditor/ckeditor', 'nano-v1.0', 'nano.browser', 'nano.ajax', 'nano.tabs', 'nano.tooltip', 'nano.dialog', 'nano.ckeditor', 'nano.datatable', 'phprop')); ?>
 	<?php echo $scripts_for_layout;	?>
 </head>
 <body>

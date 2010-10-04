@@ -1,9 +1,29 @@
 	<script type="text/javascript">
 		var data = [
-			['KeyA', 'Hotel Los Naranjos', '<input type="checkbox" value="1" checked="checked"/>', '<input type="checkbox" value="1" checked="checked"/>', '<?php echo $html->link('Edit', array('controller' => 'phprops', 'action' => 'edit', 'key', '1'), array('target' => '_blank'));?>'],
-			['KeyB', 'Hotel Los Naranjos', '<input type="checkbox" value="1" checked="checked"/>', '<input type="checkbox" value="1"/>', '<a href="editor.php?id=2" target="_blank">Editar</a>'],
-			['KeyC', 'Hotel Los Naranjos', '<input type="checkbox" value="1"/>', '<input type="checkbox" value="1" checked="checked"/>', '<a href="editor.php?id=3" target="_blank">Editar</a>'],
-			['KeyD', 'Hotel Los Naranjos', '<input type="checkbox" value="1"/>', '<input type="checkbox" value="1"/>', '<a href="editor.php?id=4" target="_blank">Editar</a>']
+		<?php 
+		foreach ($props as $key => $prop){
+			$defaultValue = $prop['values']['default'];
+			$htmCheckbox = "";
+			$translatedCheckbox = "";
+			if($prop['isHTML']){
+				$htmCheckbox = '<input type="checkbox" value="1" checked="checked"/>';
+			} else {
+				$htmCheckbox = '<input type="checkbox" value="1"/>';
+				
+			}
+			
+			if ($prop['isTranslated']){
+				$translatedCheckbox = '<input type="checkbox" value="1" checked="checked"/>';
+				
+			} else {
+				$translatedCheckbox = '<input type="checkbox" value="1" />';
+				
+			}
+			
+			
+			echo "['$key', '$defaultValue', '$htmCheckbox', '$translatedCheckbox', '" . $html->link(__('Edit', true), array('controller' => 'phprops', 'action' => 'edit', $key, $prop['isHTML'], $prop['isTranslated']), array('target' => '_blank')) . "'],";
+		} 
+		?>
 		];
 		nano(function() { phprop.table(data); });
 	</script>
