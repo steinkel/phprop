@@ -11,6 +11,7 @@ var phprop = {
 	key  : null,
 	node : null,
 	data : null,
+	actionURL : null,
 	table: function table(data) {
 		var info  = {
 			headers: ['Key', 'Default Value', 'Is HTML', 'Is Translated', ''],
@@ -89,10 +90,10 @@ var phprop = {
 		phprop.send();
 	},
 	cancel: function cancel() {
-		
+		window.close();
 	},
 	send: function send() {
-		var form = new nano({tag: 'form', action: '/path/to/handler', method: 'post'});
+		var form = new nano({tag: 'form', parent: nano.body(), action: phprop.actionURL, method: 'post'});
 		if (phprop.data.isHtml) {
 			form.add({tag: 'input', name: 'default', text: CKEDITOR.instances['default'].getData()});
 			if (phprop.data.isTranslated) {
@@ -110,5 +111,21 @@ var phprop = {
 			}
 		}
 		form.submit();
+		/*
+		nano.dialog({
+			modal  : true,
+			title  : 'Warning...',
+			content: 'Your changes have been saved. Would you like to close this window or continue editing?',
+			buttons: [{
+				text    : 'Close',
+				callback: function() {
+					window.close();
+				}
+			}, {
+				text    : 'Continue',
+				callback: function() { this.close(); }
+			}]
+		});
+		*/
 	}
 };

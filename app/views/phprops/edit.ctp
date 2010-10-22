@@ -10,8 +10,11 @@ $codeBlock = "var data = {id: $id, key: '$key', defaultValue: '${values['default
 			nano(function() { phprop.editor(data); });
 EOD;
 
+$actionURLJS = "phprop.actionURL = '" . $html->url(array('action' => 'update', $key)) . "'";
+
 $javascript->codeBlock($codeBlock, array('inline' => false));
 $javascript->codeBlock($locales, array('inline' => false));
+$javascript->codeBlock($actionURLJS, array('inline' => false));
 ?>
 <div id="phprop-box">
 <div id="phprop-editor">
